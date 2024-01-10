@@ -26,8 +26,12 @@ function TipCalculator() {
       <Percentage percentage={friendPercentage} onSelect={setFriendpercentage}>
         How much your friend liked it?
       </Percentage>
-      <Output bill={bill} tip={tip} />
-      <Reset onReset={handleReset} />
+      {bill > 0 && (
+        <>
+          <Output bill={bill} tip={tip} />
+          <Reset onReset={handleReset} />
+        </>
+      )}
     </div>
   );
 }
